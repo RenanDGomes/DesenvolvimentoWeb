@@ -1,13 +1,13 @@
-const { DataTypes } = require("sequelize");
+const { Model, Datatypes, DataTypes } = require("sequelize");
 
 class Endereco extends Model {}
 
 Endereco.init(
   {
     Id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true,
+      allowNull: false,
     },
     Cep: {
       type: DataTypes.STRING,

@@ -37,7 +37,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      MuniciopioIGBE: {
+      MunicipioIGBE: {
         type: Sequelize.STRING,
         allowNull: false,
       },

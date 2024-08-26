@@ -2,9 +2,10 @@ const { Endereco } = require('../models');
 
 exports.createEndereco = async (req, res) => {
     try {
-        const { Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, MunicipioIBGE } = req.body;
+        const { Id, Cep, Logradouro, Numero, Complemento, Bairro, Cidade, Estado, MunicipioIBGE } = req.body;
 
         const novoEndereco = await Endereco.create({
+            Id,
             Cep,
             Logradouro,
             Numero,
@@ -56,6 +57,7 @@ exports.updateEndereco = async (req, res) => {
             return res.status(404).json({ error: 'Endereço não encontrado' });
         }
 
+        endereco.Id = Id;
         endereco.Cep = Cep;
         endereco.Logradouro = Logradouro;
         endereco.Numero = Numero;
